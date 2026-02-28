@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万物生长 | 摄影作品集</title>
+    <style>
+        :root { --bg: #ffffff; --text: #222; --accent: #999; }
+        body { background: var(--bg); color: var(--text); font-family: "PingFang SC", "Hiragino Sans GB", serif; margin: 0; padding: 0; }
+        
+        /* 头部：加大留白，更像画册封面 */
+        header { text-align: center; padding: 120px 0 80px 0; }
+        h1 { font-size: 2.4rem; letter-spacing: 0.6em; font-weight: 300; margin: 0; }
+        .sub { margin-top: 20px; color: var(--accent); letter-spacing: 0.4em; font-size: 0.8rem; }
+
+        /* 核心布局：加大 gap (间距) 到 60px，减少拥挤感 */
+        .gallery { 
+            max-width: 900px; /* 缩小最大宽度，让两侧留白更多，视觉更聚焦 */
+            margin: 0 auto; 
+            padding: 0 40px 100px 40px; 
+            display: grid; 
+            grid-template-columns: repeat(12, 1fr); 
+            gap: 60px 40px; /* 上下间距加大 */
+        }
+
+        .item { position: relative; break-inside: avoid; page-break-inside: avoid; }
+        img { width: 100%; height: auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+        /* 重新规划布局，错落有致但不拥挤 */
+        .full { grid-column: span 12; margin-bottom: 20px; }
+        .half { grid-column: span 6; }
+        .third { grid-column: span 4; }
+        .center-8 { grid-column: 3 / span 8; } /* 居中的中型图片 */
+
+        .info { margin-top: 15px; font-size: 0.7rem; color: #888; letter-spacing: 0.1em; text-align: left; font-weight: 300; }
+        .num { margin-right: 10px; color: #ddd; font-style: italic; }
+
+        footer { text-align: center; padding: 60px 0; color: #ccc; font-size: 0.7rem; letter-spacing: 0.2em; }
+
+        /* 打印专用优化 */
+        @media print {
+            body { background: white; }
+            .gallery { max-width: 100%; padding-bottom: 0; }
+            header { padding-top: 80px; }
+            /* 强制每一页都有一定的页边距 */
+            @page { margin: 2cm; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>万物生长</h1>
+    <div class="sub">VITALITY · NATURE · POETRY</div>
+</header>
+
+<div class="gallery">
+    <div class="item center-8">
+        <img src="1.jpg">
+        <div class="info"><span class="num">01</span> 大地的呼吸</div>
+    </div>
+
+    <div class="item half">
+        <img src="2.jpg">
+        <div class="info"><span class="num">02</span> 向上生长</div>
+    </div>
+    <div class="item half">
+        <img src="3.jpg">
+        <div class="info"><span class="num">03</span> 内心的时光</div>
+    </div>
+
+    <div class="item center-8">
+        <img src="4.jpg">
+        <div class="info"><span class="num">04</span> 观察者</div>
+    </div>
+
+    <div class="item full">
+        <img src="5.jpg">
+        <div class="info"><span class="num">05</span> 刻度</div>
+    </div>
+
+    <div class="item full">
+        <img src="6.jpg">
+        <div class="info"><span class="num">06</span> 自由意志</div>
+    </div>
+
+    <div class="item half">
+        <img src="7.jpg">
+        <div class="info"><span class="num">07</span> 枫下</div>
+    </div>
+    <div class="item half">
+        <img src="8.jpg">
+        <div class="info"><span class="num">08</span> 岸边</div>
+    </div>
+
+    <div class="item third">
+        <img src="9.jpg">
+    </div>
+    <div class="item third">
+        <img src="10.jpg">
+    </div>
+    <div class="item third">
+        <img src="11.jpg">
+    </div>
+</div>
+
+<footer>
+    <p>2026 PHOTOGRAPHY COLLECTION</p>
+</footer>
+
+</body>
+</html>
